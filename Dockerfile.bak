@@ -1,5 +1,7 @@
 FROM php:apache
 
+RUN apt-get update && apt-get install -y php-mysqli
+
 COPY . .
 
 RUN a2enmod rewrite headers
