@@ -1,21 +1,9 @@
 FROM php:apache
 
-RUN apt-get update && apt-get install -y \
-      libicu-dev \
-      libpq-dev \
-      libmcrypt-dev \
-    && rm -r /var/lib/apt/lists/* \
-    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
-    && docker-php-ext-install \
-      intl \
-      mbstring \
-      mcrypt \
-      pcntl \
-      pdo_mysql \
-      pdo_pgsql \
-      pgsql \
-      zip \
-      opcache
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions gd xdebug
 
 COPY . .
 
