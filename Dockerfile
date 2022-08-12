@@ -1,6 +1,6 @@
 FROM php:apache
 
-RUN apt update && apt upgrade -y && apt install php-mysql
+RUN docker-php-ext-install pdo_mysql && docker-php-ext-enable pdo_mysql
 
 COPY . .
 
