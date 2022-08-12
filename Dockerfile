@@ -2,8 +2,8 @@ FROM php:apache
 
 COPY . .
 
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-RUN chown -R nextjs:nodejs /var/www/html
+RUN apt-get update
 
-USER nextjs
+RUN usermod -s /bin/bash www-data
+RUN chown www-data:www-data /var/www
+USER www-data:www-data
