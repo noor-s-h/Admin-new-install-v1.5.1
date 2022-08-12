@@ -1,6 +1,6 @@
-FROM php:7.4-apache
+FROM php:apache
 
-RUN apt-get update && apt-get install -y php7.4-mysql
+RUN docker-php-ext-install pdo_mysql
 
 COPY . .
 
