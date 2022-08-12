@@ -2,4 +2,5 @@ FROM php:apache
 
 COPY . .
 
-RUN usermod -u 1000 www-data
+RUN chown -R www-data:www-data /var/www
+USER www-data
