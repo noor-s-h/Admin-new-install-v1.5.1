@@ -1,6 +1,6 @@
 FROM php:apache
 
-RUN docker-php-ext-install pdo mysqli pdo-mysql bcmath tokenizer json mbstring openssl opcache intl xml ctype fileinfo
+RUN docker-php-ext-install pdo mysqli pdo_mysql bcmath tokenizer json mbstring openssl opcache intl xml ctype fileinfo
 
 COPY . .
 
