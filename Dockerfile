@@ -1,6 +1,6 @@
 FROM komandar/nginx-php
 
-COPY --chown=www-data:www-data ./src /var/www/html
+COPY --chown=www-data:www-data . /var/www/html
 
 RUN composer install --no-ansi --no-interaction --no-scripts --no-plugins --no-progress --prefer-dist \
     # Setup Laravel
