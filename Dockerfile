@@ -1,0 +1,3 @@
+FROM shinsenter/laravel
+
+COPY . .
