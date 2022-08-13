@@ -47,6 +47,8 @@ RUN sed -i 's/^exec /service cron start\n\nexec /' /usr/local/bin/apache2-foregr
 
 WORKDIR /var/www/html
 
+COPY . .
+
 RUN usermod -u 1000 www-data
 
 EXPOSE 80 443
