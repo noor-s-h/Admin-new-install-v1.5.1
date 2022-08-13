@@ -1,3 +1,3 @@
 FROM shinsenter/laravel
 
-COPY . .
+COPY . /var/www/html
