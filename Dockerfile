@@ -1,3 +1,3 @@
-FROM shinsenter/laravel
+FROM: komandar/nginx-php:latest
 
 COPY . /var/www/html
