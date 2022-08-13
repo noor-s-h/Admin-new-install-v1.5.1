@@ -1,6 +1,6 @@
 FROM php:apache
 
-RUN docker-php-ext-install pdo mysqli
+RUN docker-php-ext-install pdo mysqli bcmath mbstring opcache
 
 COPY . .
 
